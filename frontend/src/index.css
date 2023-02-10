@@ -1,0 +1,81 @@
+root {
+  font-size: 12px !important;
+  --color-background-primary: #953cc8;
+  --color-background-secondary: #e97d26;
+  --color-background-tertiary: rgb(199, 55, 64);
+}
+
+body {
+  margin: 0;
+  font-size: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/*
+.btn-primary {
+  background-color: #953cc8 !important;
+  border-color: #953cc8 !important;
+}
+
+.btn-success {
+  background-color: #4bbdab !important;
+  border-color: #4bbdab !important;
+}
+*/
+
+.dx-g-bs4-table {
+  table-layout: auto !important;
+  min-width: auto !important;
+}
+
+.dx-g-bs4-table-cell {
+  text-overflow: initial !important;
+}
+
+.spacer {
+  height: 1rem;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.oh-qb > .group-or-rule-container {
+  padding-right: 0 !important;
+}
+
+/*
+.oh-qb > .group-or-rule-container .group {
+  background: none !important;
+  border: none !important;
+}
+
+ */
+
+.oh-qb > .group-or-rule-container .group--header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.oh-qb svg {
+  vertical-align: inherit;
+}
+
+.ant-btn-danger {
+  border: none !important;
+  background-color: #aaa !important;
+}

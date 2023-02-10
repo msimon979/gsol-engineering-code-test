@@ -1,0 +1,3 @@
+serviceWorker.ts
+*.test.tsx
+__tests__/
