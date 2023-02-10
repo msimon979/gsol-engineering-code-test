@@ -16,6 +16,7 @@ class Product(models.Model):
     """
     This could be a drug or a supplement.
     """
+
     name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
@@ -26,8 +27,9 @@ class Campaign(models.Model):
     """
     An advertisement campaign. This is how we make our money.
     """
+
     name = models.CharField(max_length=255, unique=True)
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    product = models.ForeignKey("Product", on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
 

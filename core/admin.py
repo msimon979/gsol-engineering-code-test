@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from core.models import User, Product, Campaign
+from core.models import Campaign, Product, User
 
 
 @admin.register(Campaign)
