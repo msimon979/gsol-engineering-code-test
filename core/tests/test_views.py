@@ -51,6 +51,23 @@ class CampaignViewSetTests(APITestCase):
         assert data["results"][0]["name"] == campaign_name.name
         assert data["results"][0]["product"]["name"] == product.name
 
+    def test_get_campaigns_with_date_filters(self):
+        """Assert filtering campaigns by date returns correct data"""
+        product = ProductFactory()
+        CampaignFactory(product=product, start_date="2023-01-01", end_date="2023-01-03")
+        campaign_name = CampaignFactory(
+            product=product, start_date="2023-01-05", end_date="2023-01-10"
+        )
+
+        url = reverse("campaigns-list") + f"?end_date__gte=2023-01-05"
+        response = self.client.get(url)
+        data = response.json()
+
+        assert response.status_code == status.HTTP_200_OK
+        # Total pagination count
+        assert data["count"] == 1
+        assert data["results"][0]["end_date"] == "2023-01-10"
+
     def test_post_campaign(self):
         """Assert posting a new campaign is successful"""
         product = ProductFactory()
