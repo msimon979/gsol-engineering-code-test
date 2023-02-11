@@ -22,3 +22,5 @@ class ProductViewSet(viewsets.ModelViewSet):
     model = Product
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["name"]

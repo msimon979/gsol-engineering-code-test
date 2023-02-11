@@ -10,3 +10,6 @@ django-extensions
 autoflake==2.0.0
 isort
 black
+factory-boy
+pytest
+pytest-django
