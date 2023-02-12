@@ -16,7 +16,7 @@ makemigrations:
 	docker exec -ti $(web) sh -c "python manage.py makemigrations"
 
 lint:
-	docker exec -ti $(web) sh -c "isort . && black . && autoflake --remove-all-unused-imports -i -r ."
+	docker exec -ti $(web) sh -c "isort core/ && black core/ && autoflake --remove-all-unused-imports -i -r core/"
 
 tests:
-	docker exec -ti $(web) sh -c "pytest pokemon/tests.py"
+	docker exec -ti $(web) sh -c "pytest core/"

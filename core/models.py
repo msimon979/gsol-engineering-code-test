@@ -39,4 +39,4 @@ class Campaign(models.Model):
 
     @staticmethod
     def get_active_campaign(product):
-        return Campaign.objects.filter(product=product).first()
+        return Campaign.objects.filter(product=product, is_active=True).first()

@@ -31,6 +31,7 @@ class CampaignSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "product", "start_date", "end_date", "is_active")
 
     def campaign_overlap(self, attrs):
+        """Check if the validated data overlaps with an existing campaign"""
         product = attrs["product"]
         start_date = attrs["start_date"]
         end_date = attrs["end_date"]
@@ -44,6 +45,7 @@ class CampaignSerializer(serializers.ModelSerializer):
         return None
 
     def validate(self, attrs):
+        """Custom validations for overlapping campaigns"""
         if overlap_campaign := self.campaign_overlap(attrs):
             raise ValidationError(
                 f"Campaign {attrs['name']} overlaps with campaign {overlap_campaign}"
@@ -54,6 +56,7 @@ class CampaignSerializer(serializers.ModelSerializer):
         return attrs
 
     def validate_product(self, value):
+        """Ensure product exists"""
         try:
             product = Product.objects.get(id=value["id"])
         except Product.DoesNotExist:
