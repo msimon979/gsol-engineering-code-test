@@ -1,4 +1,4 @@
-web := gsol-engineering-code-test-master-web-1
+web := gsol-engineering-code-test
 
 connect_web:
 	docker exec -ti $(web) bash
