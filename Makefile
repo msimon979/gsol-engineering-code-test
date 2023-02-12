@@ -1,5 +1,3 @@
-web := gsol-engineering-code-test
-
 connect_web:
 	docker-compose exec web bash
 
